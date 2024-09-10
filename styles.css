@@ -1,0 +1,238 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*This section is for the main/index page*/
+
+.main-body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: url('image/nightcity.jpg') no-repeat center center;
+    background-size: cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Navigation Bar */
+nav {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 2; /* Add this line to bring nav above other elements */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffc107;
+}
+
+
+/* Main section*/
+.main-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Keep this relative, no z-index needed here */
+    z-index: 1; /* Ensure it's below the nav */
+}
+
+.overlay {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+}
+
+.overlay h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.overlay span {
+    background-color: rgb(255, 123, 0);
+    color: white;
+    padding: 0 10px;
+}
+
+.overlay p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .overlay h1 {
+        font-size: 2em;
+    }
+
+    .overlay p {
+        font-size: 1em;
+    }
+}
+
+.sign-up-button {
+    position: absolute;
+    left: 45%;  /* Adjust the left and top values */
+    top: 80%;   /* Adjust this based on the position you want */
+    padding: 10px 30px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff8411, #f64f59);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.sign-up-button:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sign-up-nav-button {
+    position: absolute;
+    right: 20px; /* Move to the right of the navigation bar */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 20px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff8411, #f64f59);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.sign-up-nav-button:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.contact-container h1 {
+    margin-bottom: 20px;
+}
+.contact-container p {
+    margin: 10px 0;
+}
+.contact-container a {
+    color: #333;
+    text-decoration: none;
+}
+.contact-container a:hover {
+    color: #007BFF;
+}
+.social-media a {
+    margin: 0 10px;
+    font-size: 24px;
+}
+.whatsapp-link {
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.whatsapp-link:hover {
+    background-color: #1ebe58;
+}
+
+/*this section is for the signup page*/
+
+.signup-body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background: url('image/sinup-image.jpg') no-repeat center center;
+    background-size: cover; 
+    
+}
+
+
+.signup-container {
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signup-container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.signup-container label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.signup-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.signup-container .Submit {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(45deg, #a64af5, #f64f59);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.signup-container .Submit:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
