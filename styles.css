@@ -5,32 +5,38 @@
     box-sizing: border-box;
 }
 
-/*This section is for the main/index page*/
+/*This section is for the main/index page */
 
-.main-body {
+.main-body { 
     font-family: Arial, sans-serif;
-    height: 100vh;
-    background: url('image/nightcity.jpg') no-repeat center center;
-    background-size: cover; 
+    height: 130vh; /* Fixed height for main body */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* Ensures sections stack vertically */
     position: relative;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    right: 10px;
+    z-index: 10;
+
 }
 
 /* Navigation Bar */
 nav {
-    position: absolute;
     top: 0;
-    right: 10px;
+    height: 60px;
     width: 100%;
+    right: 10px;
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
     text-align: center;
-    z-index: 2; /* Add this line to bring nav above other elements */
 }
 
 nav ul {
+    height: 60px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -38,6 +44,8 @@ nav ul {
 }
 
 nav ul li {
+    height: inherit;
+    padding-top : 10px;
     display: inline-block;
     margin: 0 15px;
 }
@@ -45,23 +53,26 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 24px;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #ffc107;
+nav ul li:hover {
+    background-color: #ff8411;
 }
 
 
 /* Main section*/
 .main-section {
-    height: 100vh;
+    height: 100vh; /* Fixed height for the main section */
+    width: 100%;
+    background: url('image/nightcity.jpg') no-repeat center center; /* Background image only here */
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* Keep this relative, no z-index needed here */
-    z-index: 1; /* Ensure it's below the nav */
+    position: relative;
+    z-index: 1;
 }
 
 .overlay {
@@ -88,6 +99,40 @@ nav ul li a:hover {
     margin-top: 10px;
 }
 
+/* Cards Section */
+.cards-section {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    align-items: center;
+    height: 400px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #dac69d;
+}
+
+.card {
+    flex: 1;
+    margin: 0 10px;
+    height: 200px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    transition: flex 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    flex: 2; /* Increase the hovered card's size */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.card:not(:hover) {
+    flex: 1; /* Reduce non-hovered cards */
+    transform: scale(0.9); /* Slight shrink effect */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul li {
@@ -101,6 +146,17 @@ nav ul li a:hover {
 
     .overlay p {
         font-size: 1em;
+    }
+
+    .cards-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 10px;
+        height: 150px; /* Adjust for smaller screens */
     }
 }
 
@@ -143,8 +199,9 @@ nav ul li a:hover {
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* footer section*/
 .contact-container {
-    background-color: #fff;
+    background: linear-gradient(45deg, #133dc7, #6709ff);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -157,7 +214,7 @@ nav ul li a:hover {
     margin: 10px 0;
 }
 .contact-container a {
-    color: #333;
+    color: #dfcdcd;
     text-decoration: none;
 }
 .contact-container a:hover {
